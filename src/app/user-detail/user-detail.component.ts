@@ -15,13 +15,14 @@ export class UserDetailComponent implements OnInit {
    * @default új User
    */
 
-
+  @Input() user: User = new User()
   @Output() delUser: EventEmitter<User> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
   /**
    * FELADAT!
@@ -31,6 +32,8 @@ export class UserDetailComponent implements OnInit {
    * @param user {User} - az aktuális felhasználó
    * @returns {void}
    */
-
+  onDelete(user: User): void{
+      this.delUser.emit(user)
+  }
 
 }

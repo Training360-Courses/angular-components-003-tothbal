@@ -1,6 +1,11 @@
 <div class="card user-card" *ngIf="user.id > 0">
   <div class="card-header">Selected User</div>
   <div class="card-body">
+
+    <p><label for="">{{ user.id }}</label></p>
+    <p><label for="">{{ user.name }}</label></p>
+    <p><label for="">{{ user.email }}</label></p>
+    <p><label for="">{{ user.address }}</label></p>
     <!--
       FELADAT!
       Jelenítsd meg a user négy tulajdonságát egymás alatti p elemekben:
@@ -10,6 +15,11 @@
 
 
     <p>
+
+      <button class="btn btn-block btn-danger" (click)="onDelete(user)">
+        <img src="../../assets/trash-solid.svg" alt="Delete">
+        Delete
+      </button>
       <!--
         FELADAT!
         1. Készíts ide egy gombot btn, btn-danger és btn-block osztályokkal.
